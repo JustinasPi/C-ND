@@ -3,7 +3,7 @@
 int main()
 {
 	string a = "";
-	cout << "norint skaiciuoti galutini pazymi su vidurkiu spauskite 0, jei su mediana bet kuri kita mygtuma: ";
+	cout << "norint skaiciuoti galutini pazymi su vidurkiu spauskite (0), jei su mediana (1): ";
 	cin >> a;
 	int b;
 	cout << "kiek namu darbu turi studentai? ";
