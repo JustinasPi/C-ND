@@ -185,9 +185,19 @@ int main()
 				stud.nd.clear();
 			}
 		}
+		ifstream readFile;
+		readFile.exceptions(ifstream::failbit | ifstream::badbit);
+		else {
+			try {
+		readFile.open("kursiokai.txt");
+		readFile.close();
+	}
+	catch (std::ifstream::failure& readErr) {
+		std::cerr << "\n\nException occured when reading a file\n" << readErr.what() << endl;
 
-		else cout << "Ivestas failas nebuvo rastas" << endl;
-
+		return 0;
+	}
+		     }
 		sort(grupe.begin(), grupe.end(), Tvarkymas);
 		string ivestis = "";
 		cout << "ka norite kad isvestu vidurki (0) ar mediana (1)? ";
@@ -209,21 +219,6 @@ int main()
 	grupe.clear();
 	char a;
 	cin >> a;
-
-
-
-
-	ifstream readFile;
-	readFile.exceptions(ifstream::failbit | ifstream::badbit);
-	try {
-		readFile.open("kursiokai.txt");
-		readFile.close();
-	}
-	catch (std::ifstream::failure& readErr) {
-		std::cerr << "\n\nException occured when reading a file\n" << readErr.what() << endl;
-
-		return 0;
-	}
 
 
 }
